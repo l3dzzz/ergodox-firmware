@@ -271,6 +271,7 @@ your goal.
 * For compiling in the Mac OS need installed these package from Brew:
     * brew install coreutils
     * brew tap larsimmisch/avr && brew install avr-libc
+    * brew install python3
 
 ### Create a New Keymap
 
