@@ -53,15 +53,12 @@ SCRIPTS := build-scripts
 # -----------------------------------------------------------------------------
 # -----------------------------------------------------------------------------
 
-.PHONY: all clean checkin build-dir firmware dist zip zip-all
+.PHONY: all clean build-dir firmware dist zip zip-all
 
 all: dist
 
 clean:
 	git clean -dX -f # remove ignored files and directories
-
-checkin:
-	-git commit -a
 
 build-dir:
 	-rm -r '$(BUILD)/$(TARGET)'*
@@ -74,7 +71,7 @@ $(ROOT)/firmware.%: firmware
 	cp 'src/firmware.$*' '$@'
 
 
-$(ROOT)/firmware--ui-info.json: $(SCRIPTS)/gen-ui-info.py checkin
+$(ROOT)/firmware--ui-info.json: $(SCRIPTS)/gen-ui-info.py
 	( ./'$<' \
 		--current-date '$(shell $(DATE_PROG) --rfc-3339 s)' \
 		--git-commit-date '$(GIT_COMMIT_DATE)' \
@@ -96,7 +93,6 @@ $(ROOT)/firmware--layout.html: \
 
 
 dist: \
-	checkin \
 	build-dir \
 	$(ROOT)/firmware.hex \
 	$(ROOT)/firmware.eep \
