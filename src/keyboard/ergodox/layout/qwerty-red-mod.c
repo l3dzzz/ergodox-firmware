@@ -25,23 +25,23 @@ const uint8_t PROGMEM _kb_layout[KB_LAYERS][KB_ROWS][KB_COLUMNS] = {
 // unused
 0,
 // left hand
-    _equal,     _1,         _2,      _3,      _4,    _5, _esc,
-_backslash,     _Q,         _W,      _E,      _R,    _T,    1,
-      _tab,     _A,         _S,      _D,      _F,    _G,
-   _shiftL,     _Z,         _X,      _C,      _V,    _B,    1,
-     _guiL, _grave, _backslash, _arrowL, _arrowR,
-                                                 _ctrlL, _altL,
-                                              0,      0, _home,
-                                            _bs,   _del,  _end,
+      _esc,     _1,         _2,      _3,      _4,    _5,     _equal,
+      _tab,     _Q,         _W,      _E,      _R,    _T, _backslash,
+ _capsLock,     _A,         _S,      _D,      _F,    _G,
+   _shiftL,     _Z,         _X,      _C,      _V,    _B,          1,
+    _ctrlL, _grave,      _ctrlL,   _altL,   _guiL,
+                                                      0,      0,
+                                                0,    0,      0,
+                                           _space,   _bs,     0,
 // right hand
-        3, _6,      _7,      _8,      _9,         _0,     _dash,
-_bracketL, _Y,      _U,      _I,      _O,         _P, _bracketR,
+     _esc, _6,      _7,      _8,      _9,         _0,     _dash,
+_bracketR, _Y,      _U,      _I,      _O,         _P, _bracketL,
            _H,      _J,      _K,      _L, _semicolon,    _quote,
         1, _N,      _M,  _comma, _period,     _slash,   _shiftR,
-               _arrowL, _arrowD, _arrowU,    _arrowR,     _guiR,
- _altR, _ctrlR,
-_pageU,      0,      0,
-_pageD, _enter, _space ),
+               _guiR, _arrowL, _arrowU,    _arrowD,     _arrowR,
+0,      0,
+0,      0,      0,
+0, _enter, _space ),
 
 
 	KB_MATRIX_LAYER(  // layout: layer 1: function and symbol keys
@@ -165,15 +165,15 @@ const void_funptr_t PROGMEM _kb_layout_press[KB_LAYERS][KB_ROWS][KB_COLUMNS] = {
 NULL,
 // left hand
  kprrel, kprrel, kprrel, kprrel, kprrel, kprrel, kprrel,
+ kprrel, kprrel, kprrel, kprrel, kprrel, kprrel, kprrel,
+ s2kcap, kprrel, kprrel, kprrel, kprrel, kprrel,
  kprrel, kprrel, kprrel, kprrel, kprrel, kprrel, lpush1,
- kprrel, kprrel, kprrel, kprrel, kprrel, kprrel,
- s2kcap, kprrel, kprrel, kprrel, kprrel, kprrel, lpush1,
  kprrel, kprrel, kprrel, kprrel, kprrel,
                                                  kprrel, kprrel,
                                            NULL,   NULL, kprrel,
                                          kprrel, kprrel, kprrel,
 // right hand
-        slpunum, kprrel, kprrel, kprrel, kprrel, kprrel, kprrel,
+         kprrel, kprrel, kprrel, kprrel, kprrel, kprrel, kprrel,
          kprrel, kprrel, kprrel, kprrel, kprrel, kprrel, kprrel,
                  kprrel, kprrel, kprrel, kprrel, kprrel, kprrel,
          lpush1, kprrel, kprrel, kprrel, kprrel, kprrel, s2kcap,
@@ -367,4 +367,3 @@ NULL,
  lpush7,  lpop7,   NULL,   NULL,   NULL,   NULL,   NULL,   NULL )
 
 };
-
