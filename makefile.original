@@ -58,7 +58,8 @@ SCRIPTS := build-scripts
 all: dist
 
 clean:
-	git clean -dX -f # remove ignored files and directories
+	git clean -dX  # remove ignored files and directories
+	-rm -r '$(BUILD)'
 
 checkin:
 	-git commit -a
@@ -114,3 +115,4 @@ zip-all:
 	for layout in $(LAYOUTS); do \
 		make LAYOUT=$$layout zip; \
 	done
+
