@@ -420,4 +420,3 @@ keycode_to_string = {
 
 if __name__ == '__main__':
 	main()
-
