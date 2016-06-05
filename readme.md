@@ -268,6 +268,9 @@ your goal.
 * If everything worked, the '.hex' and '.eep' files will be in the [src] (src)
   directory (where you currently are).
 
+* For compiling in the Mac OS need installed these package from Brew:
+    * brew install coreutils
+    * brew tap larsimmisch/avr && brew install avr-libc
 
 ### Create a New Keymap
 
@@ -332,7 +335,7 @@ your goal.
   code should be in the following files (using the ergodox code as an example):
     * [controller.h] (src/keyboard/ergodox/controller.h)
     * [layout.h] (src/keyboard/ergodox/layout.h) (which in the ergodox code
-      only exists to include 
+      only exists to include
       [layout/default--led-control.h]
       (src/keyboard/ergodox/layout/default--led-control.h) and
       [layout/default--matrix-control.h]
@@ -373,4 +376,3 @@ your goal.
 Copyright &copy; 2012 Ben Blazak <benblazak.dev@gmail.com>  
 Released under The MIT License (MIT) (see "license.md")  
 Project located at <https://github.com/benblazak/ergodox-firmware>
-
